@@ -18,7 +18,7 @@ int arraySum(int * array, int len)
 
 int arrayCountNegative(int * array, int len)
 {
-	if(len<=0) return 0;
+	if(len<=0) return 0;//Returning negative number if array is empty to signify there is fact no negative numbers.
   int count = 0;
   int i;
   for(i=0; i<len; i++)
