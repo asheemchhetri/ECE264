@@ -1,3 +1,21 @@
+/*
+*==============================================================================
+* @Author             : Asheem Chhetri <asheem>
+* @Date               : Wednesday, June 22nd 2016, 4:17:38 pm
+* @Email              : achhetri@purdue.edu
+* @Project Name       :
+* @Last modified by   : asheem
+* @Last modified time : Wednesday, June 22nd 2016, 4:22:31 pm
+*==============================================================================
+*@Program Purpose     : Relates to PA02 from the class ECE 264.
+* Function description are provided in the <answer02.h> file.
+*
+*
+*
+*
+*==============================================================================
+*/
+
 #include <stdlib.h>
 #include "answer02.h"
 
