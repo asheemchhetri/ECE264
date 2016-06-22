@@ -5,7 +5,7 @@
 * @Email              : achhetri@purdue.edu
 * @Project Name       :
 * @Last modified by   : asheem
-* @Last modified time : Wednesday, June 22nd 2016, 4:36:24 pm
+* @Last modified time : Wednesday, June 22nd 2016, 4:40:41 pm
 *==============================================================================
 *@Program Purpose     :
 *
@@ -40,7 +40,7 @@ int main(int argc, char * * argv)
     const char * s2 = "";
     const char * s3 = "foo";
     const char * s4 = "yolo\0wolo";
-    const char * s5 = "uff";
+    const char * s5 = "ufff";
 
 	// -- my_strlen, should be: 12, 0, and 3
     printf("my_strlen(\"%s\") = %d\n", s1, (int) my_strlen(s1));
