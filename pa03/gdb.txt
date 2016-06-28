@@ -1,0 +1,47 @@
+Breakpoint 1 at 0x40058d: file main.c, line 26.
+Starting program: /home/asheem/Documents/ece264/assignment/ECE264/pa03/a.out 
+
+Breakpoint 1, swapString (a=0x7fffffffde90, b=0x7fffffffde98) at main.c:26
+26	    char * tmp = *a;
+27	    *a = *b;
+28	    *b = tmp;
+29	    printf("Calling swapString(...)\n");
+30	    printf("&a = %p\n", &a);
+31	    printf("&b = %p\n", &b);
+$1 = 0x40090d "two"
+$2 = 0x400909 "one"
+$3 = (char **) 0x7fffffffde90
+32	    printf("&tmp = %p\n", &tmp);
+__printf (format=0x4007f2 "&tmp = %p\n") at printf.c:28
+28	printf.c: No such file or directory.
+32	in printf.c
+Continuing.
+[Inferior 1 (process 54105) exited normally]
+The program is not being run.
+Starting program: /home/asheem/Documents/ece264/assignment/ECE264/pa03/a.out 
+
+Breakpoint 1, swapString (a=0x7fffffffde90, b=0x7fffffffde98) at main.c:26
+26	    char * tmp = *a;
+$4 = 0x400909 "one"
+$5 = 0x40090d "two"
+27	    *a = *b;
+28	    *b = tmp;
+29	    printf("Calling swapString(...)\n");
+30	    printf("&a = %p\n", &a);
+31	    printf("&b = %p\n", &b);
+$6 = 0x40090d "two"
+$7 = 0x400909 "one"
+#0  swapString (a=0x7fffffffde90, b=0x7fffffffde98) at main.c:31
+#1  0x0000000000400706 in main (argc=1, argv=0x7fffffffdf88) at main.c:57
+32	    printf("&tmp = %p\n", &tmp);
+33	}
+main (argc=1, argv=0x7fffffffdf88) at main.c:58
+58	    printf("After swap, str1 == %p (i.e., '%s'), "
+61	    return EXIT_SUCCESS;
+62	}
+__libc_start_main (main=0x4005ff <main>, argc=1, argv=0x7fffffffdf88, init=<optimized out>, fini=<optimized out>, 
+    rtld_fini=<optimized out>, stack_end=0x7fffffffdf78) at libc-start.c:321
+321	libc-start.c: No such file or directory.
+[Inferior 1 (process 54143) exited normally]
+The program is not being run.
+Undefined command: "exit".  Try "help".
