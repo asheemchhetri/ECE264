@@ -1,6 +1,24 @@
+/*
+*==============================================================================
+* @Author             : Asheem Chhetri <asheem>
+* @Date               : Monday, June 13th 2016, 10:19:53 pm
+* @Email              : achhetri@purdue.edu
+* @Project Name       :
+* @Last modified by   : asheem
+* @Last modified time : Wednesday, June 29th 2016, 2:11:02 pm
+*==============================================================================
+*@Program Purpose     :
+*
+*
+*
+*
+*==============================================================================
+*/
+
 #ifndef PA01_H
 #define PA01_H
 
+int arrayIndexRFind(int needle, const int * haystack, int len)
 /** Return the sum of the array elements. */
 int arraySum(int * array, int len);
 
@@ -13,13 +31,13 @@ int arraySum(int * array, int len);
 */
 int arrayCountNegative(int * array, int len);
 
-/** Check whether or not the array elements are increasing 
+/** Check whether or not the array elements are increasing
 * Return 1 (for TRUE) if every element of the array is
 * greater than or equal to the preceding elements. Also
 * return 1 if the array is empty.
 * Return 0 if there is one or more elements that are smaller
 * than some preceding element
-* 
+*
 * Examples:
 * int array1[] = {1, 1, 2, 3, 3};
 * int len1 = 5;
@@ -33,8 +51,8 @@ int arrayIsIncreasing(int * array, int len);
 
 //Functions that search arrays
 
-/** The idea is to find a needle (some integer) in a haystack 
- * (an array). If the array "haystack" contains the integer "needle", 
+/** The idea is to find a needle (some integer) in a haystack
+ * (an array). If the array "haystack" contains the integer "needle",
  * then return the _index_ of the needle. If "haystack" contains "needle"
  * multiple times, then return the right-most (largest) index.
  * If t"needle" is not in "haystack", then return -1.
@@ -52,7 +70,7 @@ int arrayIndexFind(int needle, const int * haystack, int len);
  * If there are multiple smallest elements, then return the
  * left-most (smallest) index.
  * If the array is empty (has zero length), then return 0.
- * 
+ *
  * Examples:
  * int array[] = { 3, 4, -5 };
  * int len = 3;

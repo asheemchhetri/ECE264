@@ -5,7 +5,7 @@
 * @Email              : achhetri@purdue.edu
 * @Project Name       : Pa01
 * @Last modified by   : asheem
-* @Last modified time : Tuesday, June 14th 2016, 9:21:04 pm
+* @Last modified time : Wednesday, June 29th 2016, 2:10:55 pm
 *==============================================================================
 *@Program Purpose     : Assignment number 1 from calss ECE 264.
 * We are required to complete the following functions:
@@ -94,4 +94,18 @@ int arrayFindSmallest(int * array, int len)
       }
   }
   return index;
+}
+int arrayIndexRFind(int needle, const int * haystack, int len)
+{
+    int index = -1;
+    int i;
+    for(i = 0; i < len; i++)
+    {
+        // printf("Elements of i: %d\n",haystack[i]);
+        if(needle == haystack[i])
+        {
+            index = i;
+        }
+    }
+    return index;
 }
