@@ -5,7 +5,7 @@
 * @Email              : achhetri@purdue.edu
 * @Project Name       :
 * @Last modified by   : asheem
-* @Last modified time : Wednesday, June 29th 2016, 2:11:02 pm
+* @Last modified time : Wednesday, June 29th 2016, 2:17:12 pm
 *==============================================================================
 *@Program Purpose     :
 *
@@ -18,7 +18,7 @@
 #ifndef PA01_H
 #define PA01_H
 
-int arrayIndexRFind(int needle, const int * haystack, int len)
+int arrayIndexRFind(int needle, const int * haystack, int len);
 /** Return the sum of the array elements. */
 int arraySum(int * array, int len);
 
