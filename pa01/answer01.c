@@ -5,7 +5,7 @@
 * @Email              : achhetri@purdue.edu
 * @Project Name       : Pa01
 * @Last modified by   : asheem
-* @Last modified time : Wednesday, June 29th 2016, 2:10:55 pm
+* @Last modified time : Saturday, July 2nd 2016, 10:57:22 pm
 *==============================================================================
 *@Program Purpose     : Assignment number 1 from calss ECE 264.
 * We are required to complete the following functions:
@@ -49,9 +49,8 @@ int arrayCountNegative(int * array, int len)
 
 int arrayIsIncreasing(int * array, int len)
 {
-	if(len == 0) return 1;
 	if(array == NULL) return 1;
-	if(len < 0) return 0;
+	if(len <= 1)	return 1;
 	int check = 0; //Set to false by default, and its value will be changed as needed.
 	int i;
 	/*
@@ -61,8 +60,8 @@ int arrayIsIncreasing(int * array, int len)
 	*/
 	for(i=0; i<(len-1); i++)
 	{
-	    if(array[i] >= array[i+1]) check = 1;
-	    else check = 0;
+	    if(array[i] <= array[i+1]) check = 1;
+	    else return 0;
 	}
 	return check;
 }
