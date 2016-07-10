@@ -1,0 +1,89 @@
+==4522== Memcheck, a memory error detector
+==4522== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==4522== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==4522== Command: ./pa05 images/04-nelsonmandela.ee264 student-out-13_04-nelsonmandela.bmp
+==4522== Parent PID: 4512
+==4522== 
+--4522-- 
+--4522-- Valgrind options:
+--4522--    --tool=memcheck
+--4522--    --leak-check=full
+--4522--    --verbose
+--4522--    --log-file=memcheck.log
+--4522-- Contents of /proc/version:
+--4522--   Linux version 4.4.0-28-generic (buildd@lcy01-13) (gcc version 5.3.1 20160413 (Ubuntu 5.3.1-14ubuntu2.1) ) #47-Ubuntu SMP Fri Jun 24 10:09:13 UTC 2016
+--4522-- 
+--4522-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-rdtscp-sse3-avx
+--4522-- Page sizes: currently 4096, max supported 4096
+--4522-- Valgrind library directory: /usr/lib/valgrind
+--4522-- Reading syms from /home/asheem/Documents/c/ECE264/pa05/pa05
+--4522-- Reading syms from /lib/x86_64-linux-gnu/ld-2.23.so
+--4522--   Considering /lib/x86_64-linux-gnu/ld-2.23.so ..
+--4522--   .. CRC mismatch (computed d3da0723 wanted a1c29704)
+--4522--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.23.so ..
+--4522--   .. CRC is valid
+--4522-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--4522--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--4522--   .. CRC mismatch (computed 5529a2c7 wanted 5bd23904)
+--4522--    object doesn't have a symbol table
+--4522--    object doesn't have a dynamic symbol table
+--4522-- Scheduler: using generic scheduler lock implementation.
+--4522-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==4522== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-4522-by-asheem-on-???
+==4522== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-4522-by-asheem-on-???
+==4522== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-4522-by-asheem-on-???
+==4522== 
+==4522== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==4522== don't want to do, unless you know exactly what you're doing,
+==4522== or are doing some strange experiment):
+==4522==   /usr/lib/valgrind/../../bin/vgdb --pid=4522 ...command...
+==4522== 
+==4522== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==4522==   /path/to/gdb ./pa05
+==4522== and then give GDB the following command
+==4522==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=4522
+==4522== --pid is optional if only one valgrind process is running
+==4522== 
+--4522-- REDIR: 0x401cdc0 (ld-linux-x86-64.so.2:strlen) redirected to 0x3809e181 (???)
+--4522-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--4522--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--4522--   .. CRC mismatch (computed a30c8eaa wanted 7ae2fed4)
+--4522--    object doesn't have a symbol table
+--4522-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--4522--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--4522--   .. CRC mismatch (computed 402c2ab5 wanted 745f25ae)
+--4522--    object doesn't have a symbol table
+==4522== WARNING: new redirection conflicts with existing -- ignoring it
+--4522--     old: 0x0401cdc0 (strlen              ) R-> (0000.0) 0x3809e181 ???
+--4522--     new: 0x0401cdc0 (strlen              ) R-> (2007.0) 0x04c31020 strlen
+--4522-- REDIR: 0x401b710 (ld-linux-x86-64.so.2:index) redirected to 0x4c30bc0 (index)
+--4522-- REDIR: 0x401b930 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c320d0 (strcmp)
+--4522-- REDIR: 0x401db20 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c35270 (mempcpy)
+--4522-- Reading syms from /lib/x86_64-linux-gnu/libc-2.23.so
+--4522--   Considering /lib/x86_64-linux-gnu/libc-2.23.so ..
+--4522--   .. CRC mismatch (computed 2adb2e50 wanted 9b73f606)
+--4522--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.23.so ..
+--4522--   .. CRC is valid
+--4522-- REDIR: 0x4ec8fd0 (libc.so.6:strcasecmp) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--4522-- REDIR: 0x4ec4850 (libc.so.6:strcspn) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--4522-- REDIR: 0x4ecb2c0 (libc.so.6:strncasecmp) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--4522-- REDIR: 0x4ec6cc0 (libc.so.6:strpbrk) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--4522-- REDIR: 0x4ec7050 (libc.so.6:strspn) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--4522-- REDIR: 0x4ec871b (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a286f0 (_vgnU_ifunc_wrapper)
+--4522-- REDIR: 0x4ec69d0 (libc.so.6:rindex) redirected to 0x4c308a0 (rindex)
+--4522-- REDIR: 0x4ebd550 (libc.so.6:malloc) redirected to 0x4c2db20 (malloc)
+--4522-- REDIR: 0x4ec7630 (libc.so.6:__GI_strstr) redirected to 0x4c354d0 (__strstr_sse2)
+--4522-- REDIR: 0x4ecda40 (libc.so.6:__GI_memcpy) redirected to 0x4c32b00 (__GI_memcpy)
+--4522-- REDIR: 0x4ec8980 (libc.so.6:__GI_mempcpy) redirected to 0x4c34fa0 (__GI_mempcpy)
+--4522-- REDIR: 0x4ebda70 (libc.so.6:free) redirected to 0x4c2ed80 (free)
+--4522-- REDIR: 0x4ec4cf0 (libc.so.6:strlen) redirected to 0x4c30f60 (strlen)
+--4522-- REDIR: 0x4ecfd30 (libc.so.6:strchrnul) redirected to 0x4c34da0 (strchrnul)
+==4522== 
+==4522== HEAP SUMMARY:
+==4522==     in use at exit: 0 bytes in 0 blocks
+==4522==   total heap usage: 7 allocs, 7 frees, 108,060 bytes allocated
+==4522== 
+==4522== All heap blocks were freed -- no leaks are possible
+==4522== 
+==4522== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==4522== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
