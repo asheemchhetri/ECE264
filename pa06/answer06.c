@@ -1,0 +1,157 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "answer06.h"
+/**
+ * Create a new list-node with the passed string.
+ * str should be copied (with strdup).
+ */
+List * List_createNode(const char * str)
+{
+	List *add = NULL;
+	add = malloc(sizeof(List));
+	if(add == NULL) fprintf(stderr,"Memory was not allocated successfully.");
+	add -> str = strdup(str);
+	add -> next = NULL;
+	return add;
+}
+/**
+ * Free all memory associated with the linked list, including memory for
+ * contained strings. Must safely handle NULL lists.
+ */
+void List_destroy(List * list)
+{
+	if(list == NULL) return;
+	free (list -> str);
+	List_destroy (list -> next); // recursive call if we have more then one linky listy!!
+	free (list);
+}
+/**
+ * Length of a linked list.
+ * The length of "NULL" is 0.
+ */
+int List_length(List * list)
+{
+	if(list == NULL) return 0;
+	else return (1 + List_length(list -> next));
+}
+/**
+ * Merge two sorted lists to produce a final sorted list.
+ *
+ * 'lhs' and 'rhs' are two sorted linked-list. Read 'left-hand-side' and 'right-
+ * hand-side'. Note that either (or both) could be NULL, signifying the empty
+ * list.
+ * 'compar' is a function that is used to compare two nodes. This parameter is
+ * similar to the parameter in qsort(...), except that it only compares two
+ * strings. You can pass 'strcmp' to this function if you want to sort lists in
+ * ascending order.
+ *
+ * When implementing this function, do not call List_createNode(...) or
+ * malloc(...) Instead, think about how to build a new list by:
+ * (1) Create a new (empty -- i.e., NULL) list where we build the result. You
+ *     will need to track the first and last node of this list.
+ * (2) In a while-loop:
+ * (2.a) Use compar to identify whether the front node of lhs or rhs is smaller.
+ *       Remember that lhs or rhs could be NULL.
+ * (2.b) Move the front node of 'lhs/rhs' to the end of the result list.
+ *
+ * You will need to consider what happens when 'lhs' or 'rhs' becomes NULL.
+ *
+ * Well-written code should be 20-30 lines long, including comments and spacing.
+ * If your code is longer than this, then you may save time by rethinking your
+ * approach.
+ */
+List * List_merge(List * lhs, List * rhs, int (*compar)(const char *, const char*))
+{
+	List *head = NULL;
+	List *tail = NULL;
+	int compare_ind = 0;
+	if (lhs == NULL) return rhs;
+	if (rhs == NULL) return lhs;
+
+	if ((lhs != NULL) && (rhs != NULL))
+  {
+	    compare_ind = compar(lhs->str, rhs->str);
+	    if (compare_ind <= 0)
+			{
+			  head = lhs;
+			  tail = head;
+			  lhs = lhs->next;
+			  tail->next = NULL;
+			}
+		  else
+			{
+			  head = rhs;
+			  tail = head;
+			  rhs = rhs->next;
+			  tail->next = NULL;
+			}
+  }
+
+  while ((lhs != NULL) && (rhs != NULL))
+  {
+	  compare_ind = compar(lhs->str, rhs->str);
+    if (compare_ind <= 0)
+		{
+		  tail->next = lhs;
+		  lhs = lhs->next;
+		  tail = tail->next;
+		  tail->next = NULL;
+		}
+	  else
+		{
+		  tail->next = rhs;
+		  rhs = rhs->next;
+		  tail = tail->next;
+		  tail->next = NULL;
+		}
+  }
+  if (lhs == NULL) tail->next = rhs;
+  else if (rhs == NULL) tail->next = lhs;
+  return head;
+}
+
+/**
+ * Sorts the list's elements using the merge-sort algorithm.
+ * Merge-sort is a recursive algorithm. See the README for hints.
+ *
+ * The brief instructions are as follows:
+ *
+ * (1) Base case:
+ * Lists of length 0 or 1 are already (defacto) sorted. In this case, return
+ * 'list'.
+ *
+ * (2) Recursive case:
+ * (2.a) Split the linked-list into two approx. equal sized lists.
+ * (2.b) Call List_sort(...) on each of these smaller lists.
+ * (2.c) Call List_merge(...) to merge the now sorted smaller lists into a
+ *       single larger sorted list, which you return.
+ *
+ * Well-written code should be 20-30 lines long, including comments and spacing.
+ * If your code is longer than this, then you may save time by rethinking your
+ * approach.
+ */
+List * List_sort(List * list, int (*compar)(const char *, const char*))
+{
+	List * first = NULL;
+	List * second = NULL;
+	List * third = NULL;
+	List * output = NULL;
+	int i = 0;
+	int stepper = 0;
+	if ((List_length(list) == 0) || (List_length(list) == 1)) return list;
+
+	else
+  {
+    first = list;
+    second = list;
+    stepper = List_length(list) / 2;
+    for (i = 1; i < stepper; i++)	second = second->next;
+	  third = second->next;
+	  second->next = NULL;
+	  first = List_sort(first,compar);
+	  third = List_sort(third,compar);
+	  output = List_merge(first,third,compar);
+  }
+  return output;
+}
