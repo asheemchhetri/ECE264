@@ -123,7 +123,9 @@ void processMoveList(char * state, const char * movelist)
 }
 
 //You will need to complete the following functions (except for solve(...) and MoveTree_print(...))
-
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Functions following are part of assignment!
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 MoveTree * MoveTree_create(const char * state, const char * moves)
 {
 	//Your code goes here
